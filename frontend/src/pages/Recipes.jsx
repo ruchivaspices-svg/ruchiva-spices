@@ -1,0 +1,13 @@
+function Recipes(){
+  return (
+    <section className="page-section">
+      <div className="container">
+        <h2 style={{ fontSize: 32, color: 'var(--earth-brown)' }}>Recipes & Ideas</h2>
+        <p style={{ color: 'rgba(74,36,18,0.9)', lineHeight: 1.6, marginTop: 12 }}>
+          Explore simple recipes and spice blends to get the best from Ruchiva spices. More content coming soon.</p>
+      </div>
+    </section>
+  )
+}
+
+export default Recipes;
