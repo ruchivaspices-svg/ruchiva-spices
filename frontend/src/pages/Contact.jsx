@@ -12,7 +12,7 @@ function Contact(){
                 <div className="contact-ico" aria-hidden>
                   <svg className="contact-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="#fff" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l1.9-1.9a1 1 0 0 1 1-.2c1.1.4 2.4.6 3.6.6a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10 22 2 14 2 4a1 1 0 0 1 1-1h2.4a1 1 0 0 1 1 .7c.2 1 .5 2.1.9 3.2.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
                 </div>
-                <div>
+                <div className="contact-meta">
                   <h4>Phone</h4>
                   <p><a href="tel:+919606399923">+91 96063 99923</a></p>
                 </div>
@@ -22,7 +22,7 @@ function Contact(){
                 <div className="contact-ico" aria-hidden>
                   <svg className="contact-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="#fff" d="M20 4H4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1.4 3L12 12 5.4 7h13.2z"/></svg>
                 </div>
-                <div>
+                <div className="contact-meta">
                   <h4>Email</h4>
                   <p><a href="mailto:ruchivaspices@gmail.com">ruchivaspices@gmail.com</a></p>
                 </div>
@@ -32,7 +32,7 @@ function Contact(){
                 <div className="contact-ico" aria-hidden>
                   <svg className="contact-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path fill="#fff" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
                 </div>
-                <div>
+                <div className="contact-meta address">
                   <h4>Address</h4>
                   <p>#27, Sai Gardenia Enclave, 1st Main, 4th Cross, Behind Orchids International School, Singanayakanahalli, Bengaluru North - 560064</p>
                 </div>

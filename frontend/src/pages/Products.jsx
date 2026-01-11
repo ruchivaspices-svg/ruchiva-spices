@@ -6,11 +6,19 @@ import garamImg from "../assets/images/garam.png";
 import kababImg from "../assets/images/kabab.png";
 import fryImg from "../assets/images/fry.png";
 import chickenImg from "../assets/images/chicken.png";
+import ragiImg from "../assets/images/ragi.png";
 
 function Products() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = [
+    {
+      name: "Ragi Malt",
+      img: ragiImg,
+      details:
+        "Nutritious ragi malt powder, naturally gluten-free and rich in calcium — great for porridge and baking.",
+      available: "Available: 200g, 500g",
+    },
     {
       name: "Turmeric Powder",
       img: turmericImg,

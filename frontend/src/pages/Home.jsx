@@ -1,5 +1,9 @@
 import { useEffect } from 'react';
 import spicesImage from "../assets/images/c.jpg";
+import qualityImg from "../assets/images/quality.png";
+import fastImg from "../assets/images/fast.png";
+import certifiedImg from "../assets/images/certified.webp";
+import customerImg from "../assets/images/customer.png";
 import Products from './Products';
 import About from './About';
 import Recipes from './Recipes';
@@ -54,29 +58,37 @@ function Home({ onNavigate }) {
 
           <div className="feature-grid">
             <div className="feature-card">
-              <div className="feature-ico">🛡️</div>
+              <div className="feature-ico" aria-hidden>
+                <img src={qualityImg} alt="Quality Assured" className="feature-img" />
+              </div>
               <h3>Quality Assured</h3>
-              <p>Every batch is tested for purity and quality to ensure you get only the best</p>
+              <p>Every batch undergoes strict quality checks to ensure purity and consistency.</p>
             </div>
 
             <div className="feature-card">
-              <div className="feature-ico">🚚</div>
+              <div className="feature-ico" aria-hidden>
+                <img src={fastImg} alt="Fast Delivery" className="feature-img" />
+              </div>
               <h3>Fast Delivery</h3>
-              <p>Quick and reliable delivery to retailers and distributors across the region</p>
+              <p>Reliable logistics ensure timely delivery to retailers and customers.</p>
             </div>
 
             <div className="feature-card">
-              <div className="feature-ico">🏅</div>
+              <div className="feature-ico" aria-hidden>
+                <img src={certifiedImg} alt="Certified Products" className="feature-img feature-img--stamp" />
+              </div>
               <h3>Certified Products</h3>
-              <p>FSSAI certified products meeting all food safety standards</p>
+              <p>Our products are FSSAI certified and meet strict food safety standards.</p>
             </div>
 
             <div className="feature-card">
-              <div className="feature-ico">🤝</div>
+              <div className="feature-ico" aria-hidden>
+                <img src={customerImg} alt="Customer Support" className="feature-img" />
+              </div>
               <h3>Customer Support</h3>
-              <p>Dedicated support team to assist you with orders and queries</p>
+              <p>Dedicated support team to help with orders, bulk enquiries and product information.</p>
             </div>
-          </div>
+          </div> 
         </div>
       </section>
 

@@ -46,20 +46,31 @@ function Footer({ onNavigate }){
             </a>
 
             <a className="social-btn" href="https://youtube.com/@ruchivaspices?si=11ziSnhkN9tZKqRr" target="_blank" rel="noreferrer" aria-label="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 8.2a2.6 2.6 0 0 0-1.8-1.8C18.7 6 12 6 12 6s-6.7 0-8.2.4A2.6 2.6 0 0 0 2 8.2 27.6 27.6 0 0 0 2 15.8a2.6 2.6 0 0 0 1.8 1.8C5.3 18 12 18 12 18s6.7 0 8.2-.4a2.6 2.6 0 0 0 1.8-1.8A27.6 27.6 0 0 0 22 8.2z" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/><path d="M10 14.2l5-2.6-5-2.6v5.2z" fill="#fff"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 8.2a2.6 2.6 0 0 0-1.8-1.8C18.7 6 12 6 12 6s-6.7 0-8.2.4A2.6 2.6 0 0 0 2 8.2 27.6 27.6 0 0 0 2 15.8a2.6 2.6 0 0 0 1.8 1.8C5.3 18 12 18 12 18s6.7 0 8.2-.4a2.6 2.6 0 0 0 1.8-1.8A27.6 27.6 0 0 0 22 8.2z" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/><path d="M10 14.2l5-2.6-5-2.6v5.2z" fill="#fff"/></svg>
             </a>
 
-            <a className="social-btn" href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <a className="social-btn" href="https://www.linkedin.com/in/ruchiva-spices-581a0a3a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-2-2c-1.2 0-2 .8-2 2v6h-4v-12h4v2.2c.7-1 1.9-1.2 3-1.2zM2 9h4v12H2zM4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="#fff"/></svg>
+            </a>
+
+            <a className="social-btn" href="https://x.com/RuchivaSpices" target="_blank" rel="noreferrer" aria-label="X">
+              <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 4l14 16M19 4L5 20" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
+
+            <a className="social-btn" href="https://www.facebook.com/share/1AR5cvoCNx/" target="_blank" rel="noreferrer" aria-label="Facebook">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3V2z" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </a>
 
-          </div>
+          </div>    
         </div>
       </div>
 
       <div className="footer-legal-row">
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <small style={{ color: 'rgba(255,255,255,0.6)' }}>© {new Date().getFullYear()} Ruchiva Spices. All rights reserved.</small>
+          <div>
+            <small style={{ color: 'rgba(255,255,255,0.6)' }}>© {new Date().getFullYear()} Ruchiva Spices. All rights reserved.</small>
+            <div style={{ color: 'rgba(255,255,255,0.6)', marginTop: 6, fontSize: 13 }}>CIN: U10795KA2025PTC212028</div>
+          </div>
           <div style={{ display: 'flex', gap: 12 }}>
             <a className="footer-link" href="#">Privacy</a>
             <a className="footer-link" href="#">Terms</a>

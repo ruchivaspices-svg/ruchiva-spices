@@ -27,7 +27,8 @@ function Header({ currentPage, onNavigate }) {
       const next = !prev;
       if (next && buttonRef.current) {
         const rect = buttonRef.current.getBoundingClientRect();
-        setMenuPos({ top: rect.bottom + window.scrollY + 6, right: (window.innerWidth - rect.right) + 12 });
+        // Use viewport rect.bottom (no scrollY) so menu stays fixed relative to viewport
+        setMenuPos({ top: rect.bottom + 6, right: (window.innerWidth - rect.right) + 12 });
       } else {
         setMenuPos(null);
       }
@@ -46,18 +47,16 @@ function Header({ currentPage, onNavigate }) {
     function onResize() {
       if (buttonRef.current) {
         const rect = buttonRef.current.getBoundingClientRect();
-        setMenuPos({ top: rect.bottom + window.scrollY + 6, right: (window.innerWidth - rect.right) + 12 });
+        setMenuPos({ top: rect.bottom + 6, right: (window.innerWidth - rect.right) + 12 });
       }
     }
     document.addEventListener('click', onDocClick);
     window.addEventListener('resize', onResize);
-    window.addEventListener('scroll', onResize, { passive: true });
     // initial position
     onResize();
     return () => {
       document.removeEventListener('click', onDocClick);
       window.removeEventListener('resize', onResize);
-      window.removeEventListener('scroll', onResize);
     };
   }, [mobileOpen]);
 
