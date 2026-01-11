@@ -1,58 +1,92 @@
-import spicesImage from "../assets/images/spices.png";
+import { useEffect } from 'react';
+import spicesImage from "../assets/images/c.jpg";
+import Products from './Products';
+import About from './About';
+import Recipes from './Recipes';
+import Contact from './Contact';
 
 function Home({ onNavigate }) {
+  useEffect(() => {
+    function scrollToHash() {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash) return;
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // Scroll on mount and when hash changes
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
+    return () => window.removeEventListener('hashchange', scrollToHash);
+  }, []);
+
   return (
-    <section className="page-section">
-      <div className="container hero">
-        <div className="hero-grid">
-          <div>
-            <h1>Ruchiva Spices — Authentic Flavours, Trusted Quality</h1>
-            <p>We source the best produce and process it with care — delivering pure spices and blends that uplift everyday cooking. From farm to pack, our emphasis is on safety, traceability and taste.</p>
+    <section>
+      <div id="home" className="hero-hero" style={{ backgroundImage: `url(${spicesImage})` }}>
+        <div className="container">
+          <div className="hero-content">
+            <span className="hero-pill">100% Pure & Natural</span>
+            <h1>
+              Authentic Indian
+              <br />
+              Spices <span className="accent">for Every Kitchen</span>
+            </h1>
+            <p>Experience the rich flavors of India with Ruchiva Spices. Premium quality masalas crafted with tradition and excellence.</p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '18px 0 20px' }}>
-              <div className="feature-card">
-                <strong>Quality Policy</strong>
-                <p style={{ margin: '8px 0 0', color: 'rgba(74,36,18,0.85)' }}>Lab-tested; no adulterants; consistent grading.</p>
-              </div>
-
-              <div className="feature-card">
-                <strong>Sustainable Sourcing</strong>
-                <p style={{ margin: '8px 0 0', color: 'rgba(74,36,18,0.85)' }}>Working directly with farmers to ensure fair prices and traceability.</p>
-              </div>
+            <div className="hero-ctas">
+              <button onClick={() => onNavigate('Products')} className="btn-primary btn">Explore Products →</button>
+              
             </div>
-
-            <div style={{ display: 'flex', gap: 12 }}>
-              <button onClick={() => onNavigate('Products')} className="btn btn-primary">Browse Products</button>
-              <button onClick={() => onNavigate('Contact')} className="btn btn-outline">Get in Touch</button>
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <img src={spicesImage} alt="Assorted spices" style={{ width: 420, maxWidth: '100%', borderRadius: 8, boxShadow: '0 12px 30px rgba(0,0,0,0.08)' }} />
           </div>
         </div>
       </div>
 
-      <div className="container" style={{ marginTop: 48 }}>
-        <div className="feature-grid">
-          <div className="feature-card">
-            <h3>Hygienic Processing</h3>
-            <p>State-of-the-art facilities and routine lab testing to ensure safety.</p>
-          </div>
+      <About />
 
-          <div className="feature-card">
-            <h3>Quality Packaging</h3>
-            <p>Airtight sachets and retail-ready pouches preserving aroma and shelf life.</p>
-          </div>
+      <div id="products" style={{ marginTop: 36 }}>
+        <Products />
+      </div>
 
-          <div className="feature-card">
-            <h3>Bulk & Export</h3>
-            <p>Capable of catering to retail and bulk requirements with export compliance.</p>
+      {/* ===== WHY CHOOSE ===== */}
+      <section id="why" className="why-section" style={{ marginTop: 48 }}>
+        <div className="container">
+          <h2 style={{ textAlign: 'center', fontSize: 36, marginBottom: 6 }}>Why Choose <span className="accent">Ruchiva Spices</span>?</h2>
+          <p style={{ textAlign: 'center', color: 'var(--text-red-muted)', marginBottom: 28 }}>We go beyond just selling spices – we deliver trust, quality, and tradition in every pack</p>
+
+          <div className="feature-grid">
+            <div className="feature-card">
+              <div className="feature-ico">🛡️</div>
+              <h3>Quality Assured</h3>
+              <p>Every batch is tested for purity and quality to ensure you get only the best</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-ico">🚚</div>
+              <h3>Fast Delivery</h3>
+              <p>Quick and reliable delivery to retailers and distributors across the region</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-ico">🏅</div>
+              <h3>Certified Products</h3>
+              <p>FSSAI certified products meeting all food safety standards</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-ico">🤝</div>
+              <h3>Customer Support</h3>
+              <p>Dedicated support team to assist you with orders and queries</p>
+            </div>
           </div>
         </div>
+      </section>
 
-      
-        </div>
+      <div id="recipes" style={{ marginTop: 36 }}>
+        <Recipes />
+      </div>
+
+      <div id="contact" style={{ marginTop: 36 }}>
+        <Contact />
+      </div>
 
     </section>
   );

@@ -15,37 +15,43 @@ function Products() {
       name: "Turmeric Powder",
       img: turmericImg,
       details:
-        "Our turmeric powder is made from premium-quality turmeric roots, known for high curcumin content, vibrant colour, and earthy aroma. Ideal for cooking and food processing.",
+        "Pure turmeric powder with natural golden color and health benefits.",
+      available: "Available: 50g, 100g, 200g, 500g",
     },
     {
       name: "Red Chilli Powder",
       img: chilliImg,
       details:
-        "Finely ground red chillies with rich colour and balanced heat. Hygienically processed to preserve freshness and pungency.",
+        "Premium quality red chilli powder with perfect heat and color.",
+      available: "Available: 50g, 100g, 200g, 500g",
     },
     {
       name: "Garam Masala",
       img: garamImg,
       details:
-        "A traditional blend of aromatic whole spices that adds depth, warmth, and authentic Indian flavour to curries.",
+        "Traditional blend of aromatic spices for authentic Indian flavors.",
+      available: "Available: 50g, 100g, 200g",
     },
     {
       name: "Kabab Masala",
       img: kababImg,
       details:
-        "Expertly blended spices for kababs and grilled dishes, delivering juicy texture and bold taste.",
+        "Spice mix specially tailored for kebabs and grilled dishes.",
+      available: "Available: 50g, 100g, 200g",
     },
     {
       name: "Chicken Masala",
       img: chickenImg,
       details:
-        "A bold and flavourful spice mix specially crafted for authentic Indian chicken curries and gravies.",
+        "A bold and flavourful spice mix for chicken curries and gravies.",
+      available: "Available: 50g, 100g, 200g",
     },
     {
       name: "Fry Masala",
       img: fryImg,
       details:
         "Perfect spice blend for fry dishes, giving a crispy finish and mouth-watering aroma.",
+      available: "Available: 50g, 100g, 200g",
     },
   ];
 
@@ -57,11 +63,11 @@ function Products() {
           <h2
             style={{
               fontSize: "34px",
-              color: "var(--earth-brown)",
+              color: "var(--dark-text)",
               marginBottom: "12px",
             }}
           >
-            Our Products
+            Our <span className="accent">Premium</span> Products
           </h2>
 
           <p
@@ -77,59 +83,54 @@ function Products() {
           </p>
 
           {/* ===== GRID ===== */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "36px",
-            }}
-          >
-            {products.map((product) => (
-              <div
-                key={product.name}
-                onClick={() => setSelectedProduct(product)}
-                style={{
-                  cursor: "pointer",
-                  backgroundColor: "#fff",
-                  borderRadius: "12px",
-                  padding: "24px",
-                  textAlign: "center",
-                  height: "320px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  boxShadow: "0 6px 18px rgba(0,0,0,0.06)",
-                  transition: "transform 0.22s ease, box-shadow 0.22s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-6px)";
-                  e.currentTarget.style.boxShadow = "0 18px 36px rgba(0,0,0,0.12)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 6px 18px rgba(0,0,0,0.06)";
-                }}
-              >
-                <img
-                  src={product.img}
-                  alt={product.name}
-                  style={{
-                    width: "160px",
-                    margin: "0 auto",
-                  }}
-                />
-
-                <h3
-                  style={{
-                    fontSize: "18px",
-                    color: "var(--earth-brown)",
-                    marginTop: "16px",
-                  }}
+          <div className="product-grid">
+            {products.map((product) => {
+              const slug = product.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+              return (
+                <div
+                  id={`product-${slug}`}
+                  key={product.name}
+                  onClick={() => setSelectedProduct(product)}
+                  className="product-card"
                 >
-                  {product.name}
-                </h3>
-              </div>
-            ))}
+                  <div className="product-image">
+                    <img src={product.img} alt={product.name} className="product-img" />
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flexGrow: 1, marginTop: 12 }}>
+                    <div>
+                      <h3
+                        style={{
+                          fontSize: '18px',
+                          color: 'var(--text-red)',
+                          marginTop: '8px',
+                        }}
+                      >
+                        {product.name}
+                      </h3>
+
+                      <p style={{ fontSize: '14px', color: 'rgba(43,43,43,0.8)', lineHeight: 1.6, marginTop: 10, marginBottom: 8 }}>
+                        {product.details}
+                      </p>
+
+                      <p style={{ fontSize: '13px', color: 'rgba(43,43,43,0.6)', marginTop: 8 }}>
+                        {product.available}
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: 12 }}>
+                      <button
+                        className='btn-primary'
+                        onClick={(e) => { e.stopPropagation(); setSelectedProduct(product); }}
+                        style={{ padding: '12px 18px', backgroundColor: 'var(--cta-orange)', border: 'none', borderRadius: 8, color: '#fff', cursor: 'pointer', fontWeight: 700, width: '100%' }}
+                      >
+                        🛒 View Details
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -148,17 +149,7 @@ function Products() {
             zIndex: 1000,
           }}
         >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              backgroundColor: "#fff",
-              padding: "40px",
-              borderRadius: "12px",
-              width: "480px",
-              textAlign: "center",
-              boxShadow: "0 30px 60px rgba(0,0,0,0.25)",
-            }}
-          >
+          <div onClick={(e) => e.stopPropagation()} className="product-modal">
             <img
               src={selectedProduct.img}
               alt={selectedProduct.name}
@@ -168,7 +159,7 @@ function Products() {
             <h3
               style={{
                 fontSize: "22px",
-                color: "var(--earth-brown)",
+                color: "var(--text-red)",
                 marginBottom: "12px",
               }}
             >
@@ -179,7 +170,7 @@ function Products() {
               style={{
                 fontSize: "15px",
                 lineHeight: "1.7",
-                color: "rgba(74,36,18,0.9)",
+                color: "var(--text-red-muted)",
               }}
             >
               {selectedProduct.details}

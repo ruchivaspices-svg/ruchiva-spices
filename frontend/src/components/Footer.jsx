@@ -1,46 +1,69 @@
-function Footer(){
+function Footer({ onNavigate }){
+  const goToSection = (hash) => {
+    window.location.hash = hash;
+    if (onNavigate) onNavigate('Home');
+  }
+
+  const goToProduct = (name) => {
+    const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    window.location.hash = `#product-${slug}`;
+    if (onNavigate) onNavigate('Home');
+  }
+
   return (
     <footer className="site-footer">
       <div className="container footer-inner">
         <div className="footer-column">
-          <h4>Ruchiva Spices</h4>
-          <p>Premium Indian spices — pure powders & blends for consumers and bulk trade.</p>
+          <img src="/src/assets/images/ruchiva-logo.png" alt="Ruchiva logo" style={{ height: 56 }} />
+          <p style={{ marginTop: 12, maxWidth: 320, color: 'rgba(255,255,255,0.85)' }}>Bringing authentic Indian flavors to your kitchen with premium quality spices.</p>
+        </div>
 
-          <div style={{ marginTop: 12 }}>
-            <strong>Contact</strong>
-            <div style={{ marginTop: 8 }}>
-              <a className="footer-link" href="mailto:ruchivaspices@gmail.com">✉️ ruchivaspices@gmail.com</a>
-              <br />
-              <a className="footer-link" href="tel:+919606399923">📞 +91 96063 99923</a>
-            </div>
+        <div className="footer-column">
+          <h4>Quick Links</h4>
+          <div className="footer-links" style={{ marginTop: 8 }}>
+            <button className="footer-link" onClick={() => goToSection('#home')}>Home</button>
+            <button className="footer-link" onClick={() => goToSection('#about')}>About</button>
+            <button className="footer-link" onClick={() => goToSection('#products')}>Products</button>
+            <button className="footer-link" onClick={() => goToSection('#contact')}>Contact</button>
           </div>
         </div>
 
         <div className="footer-column">
-          <strong>Follow us</strong>
-          <div className="footer-links">
-            <a href="https://www.instagram.com/ruchiva_spices?igsh=MXIzbHFxeGtpYmFo" target="_blank" rel="noreferrer" style={{ color: '#E1306C' }}>📸 Instagram</a>
-            <a href="https://youtube.com/@ruchivaspices?si=11ziSnhkN9tZKqRr" target="_blank" rel="noreferrer" style={{ color: '#FF0000' }}>▶️ YouTube</a>
-            {/* Facebook placeholder: pointing to Instagram for now as requested */}
-            <a href="https://www.instagram.com/ruchiva_spices?igsh=MXIzbHFxeGtpYmFo" target="_blank" rel="noreferrer" style={{ color: '#1877F2' }}>📘 Facebook</a>
-          </div>
-
-          <div style={{ marginTop: 12 }}>
-            <strong>Location</strong>
-            <p style={{ marginTop: 6 }}><a className="footer-link" href="https://maps.google.com/maps?q=Ruchiva%20Spices" target="_blank" rel="noreferrer">View on map</a></p>
-            <div className="footer-map">
-              <iframe title="map" src="https://maps.google.com/maps?q=Ruchiva%20Spices&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style={{ border: 0 }} loading="lazy" />
-            </div>
-          </div>
+          <h4>Our Products</h4>
+          <ul style={{ marginTop: 8, listStyle: 'none', padding: 0, color: 'rgba(255,255,255,0.85)' }}>
+            <li><button className="footer-link" onClick={() => goToProduct('Red Chilli Powder')}>Red Chilli Powder</button></li>
+            <li><button className="footer-link" onClick={() => goToProduct('Turmeric Powder')}>Turmeric Powder</button></li>
+            <li><button className="footer-link" onClick={() => goToProduct('Garam Masala')}>Garam Masala</button></li>
+            <li><button className="footer-link" onClick={() => goToSection('#products')}>View All Products</button></li>
+          </ul>
         </div>
 
         <div className="footer-column">
-          <strong>Company</strong>
-          <p style={{ marginTop: 8 }}>
-            © {new Date().getFullYear()} Ruchiva Spices. All rights reserved.
-          </p>
-          <p style={{ marginTop: 6 }}>CIN: <em>U10795KA20225PTC212028</em></p>
-          <p style={{ marginTop: 6 }}>GST: <em>XXAAAAA0000X1Z0</em></p>
+          <h4>Follow Us</h4>
+          <div style={{ display: 'flex', gap: 12, marginTop: 10 }}>
+            <a className="social-btn" href="https://www.instagram.com/ruchiva_spices?igsh=MXIzbHFxeGtpYmFo" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="3.2" stroke="#fff" strokeWidth="1.2"/><circle cx="18.5" cy="5.5" r="0.6" fill="#fff"/></svg>
+            </a>
+
+            <a className="social-btn" href="https://youtube.com/@ruchivaspices?si=11ziSnhkN9tZKqRr" target="_blank" rel="noreferrer" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 8.2a2.6 2.6 0 0 0-1.8-1.8C18.7 6 12 6 12 6s-6.7 0-8.2.4A2.6 2.6 0 0 0 2 8.2 27.6 27.6 0 0 0 2 15.8a2.6 2.6 0 0 0 1.8 1.8C5.3 18 12 18 12 18s6.7 0 8.2-.4a2.6 2.6 0 0 0 1.8-1.8A27.6 27.6 0 0 0 22 8.2z" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/><path d="M10 14.2l5-2.6-5-2.6v5.2z" fill="#fff"/></svg>
+            </a>
+
+            <a className="social-btn" href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a4 4 0 0 0-4 4v3H8v4h3v8h4v-8h3l1-4h-4V6a1 1 0 0 1 1-1h3V2z" stroke="#fff" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-legal-row">
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <small style={{ color: 'rgba(255,255,255,0.6)' }}>© {new Date().getFullYear()} Ruchiva Spices. All rights reserved.</small>
+          <div style={{ display: 'flex', gap: 12 }}>
+            <a className="footer-link" href="#">Privacy</a>
+            <a className="footer-link" href="#">Terms</a>
+          </div>
         </div>
       </div>
     </footer>

@@ -29,7 +29,7 @@ function App() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header currentPage={page} onNavigate={setPage} />
       <main style={{ flex: 1 }}>{renderPage()}</main>
-      <Footer />
+      <Footer onNavigate={setPage} />
     </div>
   );
 }
