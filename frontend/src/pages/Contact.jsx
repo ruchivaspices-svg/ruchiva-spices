@@ -45,27 +45,34 @@ function Contact(){
           <div className="contact-right">
             <div className="contact-card">
               <h3>Send us a Message</h3>
-              <form>
-                <label>Full Name *</label>
-                <input placeholder="Enter your name" />
+              <form
+                action="https://formsubmit.co/ruchivaspices@gmail.com"
+                method="POST"
+              >
+                <input type="hidden" name="_subject" value="New enquiry from Ruchiva site" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="text" name="_honey" style={{ display: 'none' }} aria-hidden />
 
-                <label>Email Address *</label>
-                <input placeholder="Enter your email" />
+                <label htmlFor="fullName">Full Name *</label>
+                <input id="fullName" name="fullName" placeholder="Enter your name" required />
 
-                <label>Enquiry Type</label>
-                <select>
+                <label htmlFor="email">Email Address *</label>
+                <input id="email" name="email" type="email" placeholder="Enter your email" required />
+
+                <label htmlFor="enquiry">Enquiry Type</label>
+                <select id="enquiry" name="enquiry">
                   <option>General</option>
                   <option>Sales / Bulk Orders</option>
                   <option>Quality / Certifications</option>
                   <option>Careers</option>
                 </select>
 
-                <label>Message *</label>
-                <textarea placeholder="Tell us about your requirements" />
+                <label htmlFor="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Tell us about your requirements" required />
 
                 <div className="contact-note">We aim to respond within 48 hours. By contacting us you agree to our privacy policy.</div>
 
-                <button type="button" className="btn-primary" style={{ marginTop: 12 }}>Send Message</button>
+                <button type="submit" className="btn-primary" style={{ marginTop: 12 }}>Send Message</button>
               </form>
             </div>
           </div>

@@ -1,3 +1,5 @@
+import ruchivaLogo from '../assets/images/ruchiva-logo.png';
+
 function Footer({ onNavigate }){
   const goToSection = (hash) => {
     window.location.hash = hash;
@@ -14,7 +16,7 @@ function Footer({ onNavigate }){
     <footer className="site-footer">
       <div className="container footer-inner">
         <div className="footer-column">
-          <img src="/src/assets/images/ruchiva-logo.png" alt="Ruchiva logo" style={{ height: 56 }} />
+          <img src={ruchivaLogo} alt="Ruchiva logo" style={{ height: 56 }} />
           <p style={{ marginTop: 12, maxWidth: 320, color: 'rgba(255,255,255,0.85)' }}>Bringing authentic Indian flavors to your kitchen with premium quality spices.</p>
         </div>
 
@@ -31,9 +33,10 @@ function Footer({ onNavigate }){
         <div className="footer-column">
           <h4>Our Products</h4>
           <ul style={{ marginTop: 8, listStyle: 'none', padding: 0, color: 'rgba(255,255,255,0.85)' }}>
-            <li><button className="footer-link" onClick={() => goToProduct('Red Chilli Powder')}>Red Chilli Powder</button></li>
-            <li><button className="footer-link" onClick={() => goToProduct('Turmeric Powder')}>Turmeric Powder</button></li>
-            <li><button className="footer-link" onClick={() => goToProduct('Garam Masala')}>Garam Masala</button></li>
+            <li><button className="footer-link" onClick={() => goToProduct('Ragi Malt Chocolate Flavour')}>Health Mix Powders</button></li>
+            <li><button className="footer-link" onClick={() => goToProduct('Turmeric Powder')}>Pure Spice Powders</button></li>
+            <li><button className="footer-link" onClick={() => goToProduct('Garam Masala')}>Traditional Masala Blends</button></li>
+            <li><button className="footer-link" onClick={() => goToProduct('Chicken Masala')}>Chicken Masala Range</button></li>
             <li><button className="footer-link" onClick={() => goToSection('#products')}>View All Products</button></li>
           </ul>
         </div>

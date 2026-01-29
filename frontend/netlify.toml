@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "https://ruchivaspices.com/*"
+  to = "https://ruchiva.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ruchivaspices.com/*"
+  to = "https://ruchiva.com/:splat"
+  status = 301
+  force = true

@@ -28,6 +28,20 @@ function App() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Header currentPage={page} onNavigate={setPage} />
+      
+      {/* Scrolling Announcement Ticker */}
+      <div className="ticker-bar">
+        <div className="ticker-track">
+          <span className="ticker-item">🌟 Coming Soon to Markets Near You! Our Premium Authentic Products Will Be Available Very Soon - Stay Tuned for Updates!</span>
+          <span className="ticker-item">🌟 Coming Soon to Markets Near You! Our Premium Authentic Products Will Be Available Very Soon - Stay Tuned for Updates!</span>
+          <span className="ticker-item">🌟 Coming Soon to Markets Near You! Our Premium Authentic Products Will Be Available Very Soon - Stay Tuned for Updates!</span>
+          <span className="ticker-item">🌟 Coming Soon to Markets Near You! Our Premium Authentic Products Will Be Available Very Soon - Stay Tuned for Updates!</span>
+        </div>
+      </div>
+
+      {/* Spacer to offset the fixed ticker height so content doesn't hide underneath */}
+      <div className="ticker-spacer" aria-hidden="true" />
+      
       <main style={{ flex: 1 }}>{renderPage()}</main>
       <Footer onNavigate={setPage} />
     </div>

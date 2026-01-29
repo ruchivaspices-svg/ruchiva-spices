@@ -2,21 +2,30 @@ import { useState } from "react";
 
 import turmericImg from "../assets/images/turmeric.png";
 import chilliImg from "../assets/images/chilli.png";
+import corianderImg from "../assets/images/coriander.png";
 import garamImg from "../assets/images/garam.png";
 import kababImg from "../assets/images/kabab.png";
 import fryImg from "../assets/images/fry.png";
 import chickenImg from "../assets/images/chicken.png";
 import ragiImg from "../assets/images/ragi.png";
+import abcImg from "../assets/images/abc.png";
 
 function Products() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = [
     {
-      name: "Ragi Malt",
+      name: "Ragi Malt Chocolate Flavour",
       img: ragiImg,
       details:
-        "Nutritious ragi malt powder, naturally gluten-free and rich in calcium — great for porridge and baking.",
+        "Nutritious ragi malt powder with a chocolate twist, naturally gluten-free and rich in calcium — great for porridge and baking.",
+      available: "Available: 200g, 500g",
+    },
+    {
+      name: "ABC Fruit Mix",
+      img: abcImg,
+      details:
+        "Tangy-sweet ABC fruit mix powder, perfect for refreshing drinks, smoothies, and desserts.",
       available: "Available: 200g, 500g",
     },
     {
@@ -32,6 +41,13 @@ function Products() {
       details:
         "Premium quality red chilli powder with perfect heat and color.",
       available: "Available: 50g, 100g, 200g, 500g",
+    },
+    {
+      name: "Coriander Powder",
+      img: corianderImg,
+      details:
+        "Fresh and aromatic coriander powder, essential for authentic Indian cooking.",
+      available: "Coming Soon",
     },
     {
       name: "Garam Masala",
@@ -103,6 +119,9 @@ function Products() {
                 >
                   <div className="product-image">
                     <img src={product.img} alt={product.name} className="product-img" />
+                    <div style={{ position: 'absolute', top: '12px', right: '12px', backgroundColor: 'var(--cta-orange)', color: '#fff', padding: '6px 12px', borderRadius: '4px', fontSize: '12px', fontWeight: 700 }}>
+                      Coming Soon
+                    </div>
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flexGrow: 1, marginTop: 12 }}>
@@ -157,12 +176,19 @@ function Products() {
             zIndex: 1000,
           }}
         >
-          <div onClick={(e) => e.stopPropagation()} className="product-modal">
-            <img
-              src={selectedProduct.img}
-              alt={selectedProduct.name}
-              style={{ width: "200px", marginBottom: "20px" }}
-            />
+          <div onClick={(e) => e.stopPropagation()} className="product-modal" style={{ position: 'relative' }}>
+            {selectedProduct && (
+              <div style={{ position: 'absolute', top: '0', right: '0', backgroundColor: '#A61E2A', color: '#fff', padding: '12px 18px', borderRadius: '0 12px 0 12px', fontSize: '15px', fontWeight: 700 }}>
+                Coming Soon
+              </div>
+            )}
+            <div style={{ position: 'relative', display: 'inline-block', marginBottom: "20px" }}>
+              <img
+                src={selectedProduct.img}
+                alt={selectedProduct.name}
+                style={{ width: "200px" }}
+              />
+            </div>
 
             <h3
               style={{

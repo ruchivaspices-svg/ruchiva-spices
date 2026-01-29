@@ -4,7 +4,7 @@ function About(){
       <div className="container about-section" style={{ marginTop: 4 }}>
         <div className="about-intro" style={{ textAlign: 'center', marginBottom: 28 }}>
           <h2>About <span className="accent">Ruchiva Spices</span></h2>
-          <p className="about-lead">Since our inception, we've been dedicated to bringing the finest quality spices to your kitchen, preserving the authentic taste of Indian cuisine.</p>
+          <p className="about-lead">Since our inception, we've been dedicated to bringing authentic flavors and premium quality to your kitchen, preserving the essence of traditional Indian cuisine.</p>
         </div>
 
         <div className="about-cards">
@@ -54,9 +54,9 @@ function About(){
           <div className="story-card">
             <div className="story-left">
               <h2>Our <span className="accent">Story</span></h2>
-              <p>Ruchiva Spices is built on a foundation of quality, authenticity, and trust. We understand that great food starts with great ingredients, and that's why we source only the finest raw materials from trusted farmers across India.</p>
+              <p>Ruchiva Spices was born from a passion for bringing authentic Indian flavors to every home. We believe that exceptional cooking begins with exceptional ingredients, which is why we handpick the finest produce from trusted farmers across India's premier growing regions.</p>
 
-              <p style={{ marginTop: 18 }}>Our state-of-the-art processing facilities ensure that every grain of spice retains its natural aroma, color, and flavor. From traditional garam masala to specialty blends, each product is crafted with care and precision.</p>
+              <p style={{ marginTop: 18 }}>Our modern grinding and packaging facility maintains strict hygiene standards while preserving the natural essence of each ingredient. From traditional blends to specialty masalas, every product reflects generations of culinary wisdom combined with contemporary quality control.</p>
             </div>
 
             <div className="story-right">
@@ -67,7 +67,7 @@ function About(){
                 </div>
 
                 <div className="stat">
-                  <div className="stat-num">6</div>
+                  <div className="stat-num">9</div>
                   <div className="stat-label">Products</div>
                 </div>
 

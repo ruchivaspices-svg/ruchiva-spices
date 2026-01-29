@@ -25,9 +25,12 @@ function Home({ onNavigate }) {
 
   return (
     <section>
-      <div id="home" className="hero-hero" style={{ backgroundImage: `url(${spicesImage})` }}>
+      <div id="home" className="hero-hero">
+        <div className="hero-powder" aria-hidden></div>
+        <div className="hero-powder hero-powder--2" aria-hidden></div>
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-row">
+            <div className="hero-content">
             <span className="hero-pill">100% Pure & Natural</span>
             <h1>
               Authentic Indian
@@ -37,8 +40,17 @@ function Home({ onNavigate }) {
             <p>Experience the rich flavors of India with Ruchiva Spices. Premium quality masalas crafted with tradition and excellence.</p>
 
             <div className="hero-ctas">
-              <button onClick={() => onNavigate('Products')} className="btn-primary btn">Explore Products →</button>
+              <button onClick={() => { const el = document.getElementById('products'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="btn-primary btn">Explore Products →</button>
               
+            </div>
+            </div>
+
+            <div className="hero-visual" aria-hidden>
+              <div className="hero-visual-card">
+                <div className="hero-visual-overlay" aria-hidden></div>
+                <div className="hero-visual-dust" aria-hidden></div>
+                <img src={spicesImage} alt="Spice assortment" className="hero-visual-img" />
+              </div>
             </div>
           </div>
         </div>
